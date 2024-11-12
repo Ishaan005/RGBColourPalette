@@ -12,7 +12,7 @@ public class ColourTable {
         }
 
         this.capacity = capacity;
-        this.colours = new ArrayList<ArrayList<Integer>>(capacity);
+        this.colours = new ArrayList<>(capacity);
     }
 
     public void add(ArrayList<Integer> colour) {
@@ -27,7 +27,7 @@ public class ColourTable {
         }
 
         colours.add(colour);
-        System.out.println("ColourTable: " + colours.toString());
+        System.out.println("ColourTable: " + colours);
     }
 
     public int size(){
