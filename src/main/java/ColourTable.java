@@ -16,7 +16,7 @@ public class ColourTable {
         this.colours = new ArrayList<>(capacity);
     }
 
-    //Method to add a RGB colour to ColourTable
+    //Method to add an RGB colour to ColourTable
     public void add(int colour) {
         //Check colour to add is a 24-bit value of correct range
         if (colour > 0xFFFFFF || colour < 0x000000) {

@@ -1,12 +1,10 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
-
 class ColourTableTest {
     @Test
     void shouldInitializePaletteWithValidSize() {
-        ColourTable table = new ColourTable(4);
+        new ColourTable(4);
     }
 
     @Test
