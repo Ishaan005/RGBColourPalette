@@ -18,44 +18,22 @@ class ColourTableTest {
     @Test
     void shouldAddColourToPalette() {
         ColourTable table = new ColourTable(2);
-        ArrayList<Integer> testList = new ArrayList<>();
-        testList.add(255);
-        testList.add(255);
-        testList.add(255);
-        table.add(testList);
+        table.add(0xFF0000);
         assertEquals(1, table.size());
     }
 
     @Test
     void shouldThrowExceptionForExceedingBitSize() {
         ColourTable table = new ColourTable(2);
-        ArrayList<Integer> testList = new ArrayList<>();
-        testList.add(255);
-        testList.add(255);
-        testList.add(256);
-        assertThrows(IllegalStateException.class, () -> table.add(testList));
+        table.add(0xFF0000);
+        assertThrows(IllegalStateException.class, () -> table.add(0xFFFFFFF));
     }
 
     @Test
     void shouldThrowExceptionForExceedingCapacity() {
         ColourTable table = new ColourTable(2);
-
-        ArrayList<Integer> testList1 = new ArrayList<>();
-        testList1.add(255);
-        testList1.add(5);
-        testList1.add(25);
-        table.add(testList1);
-
-        ArrayList<Integer> testList2 = new ArrayList<>();
-        testList2.add(67);
-        testList2.add(2);
-        testList2.add(9);
-        table.add(testList2);
-
-        ArrayList<Integer> testList3 = new ArrayList<>();
-        testList3.add(67);
-        testList3.add(2);
-        testList3.add(9);
-        assertThrows(IllegalStateException.class,() -> table.add(testList3));
+        table.add(0xFFFFFF);
+        table.add(0xFFFFFF);
+        assertThrows(IllegalStateException.class,() -> table.add(0xFF0101));
     }
 }
